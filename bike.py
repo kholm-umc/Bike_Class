@@ -11,91 +11,91 @@ class Bike:
     __brakeType = "hand"
 
     # Class instantiator
-    def __init__(self, numberOfGears=1, numberOfWheels=2, brakeType="hand"):
+    def __init__(self, numberOfGears: int = 1, numberOfWheels: int = 2, brakeType: str = "hand"):
         # Set all our properties
-        self.setNumberOfGears(numberOfGears)
-        self.setNumberOfWheels(numberOfWheels)
-        self.setBrakeType(brakeType)
+        self.setnumberofgears(numberOfGears)
+        self.setnumberofwheels(numberOfWheels)
+        self.setbraketype(brakeType)
 
-        self.setCurrentGear(1)
+        self.setcurrentgear(1)
 
     # Getter for the __numberOfGears property
-    def getNumberOfGears(self):
-        return (self.__numberOfGears)
+    def getnumberofgears(self):
+        return self.__numberOfGears
 
     # Setter for the __numberOfGears property
     #  Valid values are integers from 1 to 15
-    def setNumberOfGears(self, numberOfGears):
+    def setnumberofgears(self, numberOfGears: int) -> None:
         try:
             # Is the argument an integer?
             if int(numberOfGears):
                 pass
 
         except Exception as e:
-            raise TypeError(f"{numberOfGears} is not an integer")
+            raise TypeError(f"{numberOfGears} is not an integer: {e}")
 
         # It is an integer, is it between 1 and 15?
-        if numberOfGears > 0 and numberOfGears < 16:
+        if 0 < numberOfGears < 16:
             self.__numberOfGears = numberOfGears
         else:
             raise ValueError(f"{numberOfGears} is not between 1 and 15")
 
     # Getter for the __currentGear property
-    def getCurrentGear(self):
-        return (self.__currentGear)
+    def getcurrentgear(self) -> int:
+        return self.__currentGear
 
     # Setter for the __currentGear property
     #  Valid values are integers from 1 to 15
-    def setCurrentGear(self, currentGear):
+    def setcurrentgear(self, currentGear: int) -> None:
         try:
             # Is the argument an integer?
             if int(currentGear):
                 pass
 
         except Exception as e:
-            raise TypeError(f"{currentGear} is not an integer")
+            raise TypeError(f"{currentGear} is not an integer: {e}")
 
         # It is an integer, is it between 1 and self.__numberOfGears?
-        if currentGear > 0 and currentGear <= self.__numberOfGears:
+        if 0 < currentGear <= self.__numberOfGears:
             self.__currentGear = currentGear
         else:
             raise ValueError(f"{currentGear} is not between 1 and {self.__numberOfGears}")
 
     # Getter for the __numberOfWheels property
-    def getNumberOfWheels(self):
-        return (self.__numberOfWheels)
+    def getnumberofwheels(self) -> int:
+        return self.__numberOfWheels
 
     # Setter for the __numberOfWheels property
     #  Valid values are integers from 1 to 4
-    def setNumberOfWheels(self, numberOfWheels):
+    def setnumberofwheels(self, numberOfWheels: int) -> None:
         try:
             # Is the argument an integer?
             if int(numberOfWheels):
                 pass
 
         except Exception as e:
-            raise TypeError(f"{numberOfWheels} is not an integer")
+            raise TypeError(f"{numberOfWheels} is not an integer: {e}")
 
         # It is an integer, is it between 1 and 4?
-        if numberOfWheels > 0 and numberOfWheels <= 5:
+        if 0 < numberOfWheels <= 5:
             self.__numberOfWheels = numberOfWheels
         else:
             raise ValueError(f"{numberOfWheels} is not between 1 and 4")
 
     # Getter for the __brakeType property
-    def getBrakeType(self):
-        return (self.__brakeType)
+    def getbraketype(self) -> str:
+        return self.__brakeType
 
     # Setter for the __brakeType property
     #  Valid values are integers from 1 to 15
-    def setBrakeType(self, brakeType):
+    def setbraketype(self, brakeType: str) -> None:
         try:
             # Is the argument an integer?
             if str(brakeType):
                 pass
 
         except Exception as e:
-            raise TypeError(f"{brakeType} is not an string")
+            raise TypeError(f"{brakeType} is not an string: {e}")
 
         # It is a string, is it either "hand" or "foot"?
         if brakeType == "hand" or brakeType == "foot":
@@ -105,12 +105,12 @@ class Bike:
 
     # Increase the gear
     #  Do not allow gear to be over the __numberOfGears
-    def increaseGear(self):
-        if self.getCurrentGear() < self.__numberOfGears:
-            self.setCurrentGear(self.getCurrentGear() + 1)
+    def increasegear(self) -> None:
+        if self.getcurrentgear() < self.__numberOfGears:
+            self.setcurrentgear(self.getcurrentgear() + 1)
 
     # Decrease the gear
     #  Do not allow gear to be below 1
-    def decreaseGear(self):
-        if self.getCurrentGear() > 1:
-            self.setCurrentGear(self.getCurrentGear() - 1)
+    def decreasegear(self) -> None:
+        if self.getcurrentgear() > 1:
+            self.setcurrentgear(self.getcurrentgear() - 1)
