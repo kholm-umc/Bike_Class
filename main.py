@@ -28,18 +28,21 @@ try:
     input("Continue")
     print()
 
+    # Increase the gear (to 11)
     print("Increasing the current gear")
     b.increasegear()
     print(f"Current Gear: {b.getcurrentgear()}")
     input("Continue")
     print()
 
+    # Increase the gear, again (to the max: 12)
     print("Increasing the current gear, again")
     b.increasegear()
     print(f"Current Gear: {b.getcurrentgear()}")
     input("Continue")
     print()
 
+    # Increase the gear, once more, past the max
     print("Trying to go past the max gear")
     b.increasegear()
     print(f"Current Gear: {b.getcurrentgear()}")
@@ -47,21 +50,30 @@ try:
     input("Continue")
     print()
 
+    # Prepare to go below the minimum gear
     print("Resetting our gear to 2")
     b.setcurrentgear(2)
     print(f"Current Gear: {b.getcurrentgear()}")
     input("Continue")
     print()
 
+    # Decrease the gear (to 1)
     print("Decreasing our current gear")
     b.decreasegear()
     print(f"Current Gear: {b.getcurrentgear()}")
     input("Continue")
     print()
 
+    # Try to bypass the minimum gear
     print("Trying to decrease our current gear below 1")
     b.decreasegear()
     print(f"Current Gear: {b.getcurrentgear()}")
+    print("NOTE: We do not allow that to happen")
+    print()
+
+    # Set the brake type to "electric"
+    print("Trying to set the brake type to 'electric'")
+    b.setbraketype("electric")
     print("NOTE: We do not allow that to happen")
     print()
 

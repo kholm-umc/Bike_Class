@@ -101,7 +101,7 @@ class Bike:
         if brakeType == "hand" or brakeType == "foot":
             self.__brakeType = brakeType
         else:
-            raise ValueError(f"{brakeType} is not either 'hand' or 'foot'")
+            raise ValueError(f"{brakeType} is neither 'hand' nor 'foot'")
 
     # Increase the gear
     #  Do not allow gear to be over the __numberOfGears
